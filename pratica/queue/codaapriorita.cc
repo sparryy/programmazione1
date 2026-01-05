@@ -1,0 +1,1 @@
+//nel caso si voglia implementare una coda a priorità, si possono fare n code con priorità diverse
