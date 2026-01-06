@@ -11,7 +11,7 @@ int main(int argc, char * argv[]) {
     char stringa2[] = {'C','i','a','o','\0'};
     char buffer[256];
     //questi operatori operano direttamente sulle stringhe
-    //memorizza finchè non incontra una spaziatura(che non viene letta)
+    //memorizza finchè non incontra una spaziatura (che non viene letta)
     //come spazio, tabulazione, invio
     //e memorizza \0 come ultimo carattere
     cin >> buffer;

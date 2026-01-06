@@ -5,7 +5,7 @@ using namespace std;
 //dovrò ricordarmi di deallocarla
 //si tiene sempre traccia del primo nodo
 // NEL CASO DI ALCUNE FUNZIONI IL NODO AL POSTO DI ESSERE ELIMINATO VIENE RITORNATO
-//CONTROLLARE DI ELIMINARLO NEL MAIN ALTRIMENTI AVVENGONO MEMORY LERAKS
+// CONTROLLARE DI ELIMINARLO NEL MAIN ALTRIMENTI AVVENGONO MEMORY LERAKS
 struct nodo {
     int valore;
     nodo * next;

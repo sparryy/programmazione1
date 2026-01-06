@@ -64,32 +64,39 @@ int main() {
 int ciao (int a){
     return a+1;
 }
+
 //i parametri sono anche detti parametri formali
 //procedura, funzione che ritorna void
 void ciaus (int b){}
+
 //assegna ad a il valore passato, come se facesse a = ...
 //può essere eseguito anche tramite un espressione senza l-value
 //ad esempio parametroPerValore(2); -> int a = 2
 //nel caso sia un tipo compatibile la conversione è implicita
 //l'informazione è quindi duplicata
 void parametroPerValore(int a) {}
+
 //il valore assegnato deve essere un espressione con indirizzo
 //l'informazione non viene duplicata
-//se modifico il parametro formale, modifico il parametro attuale(la variabile iniziale)
+//se modifico il parametro formale, modifico il parametro attuale (la variabile iniziale)
 void parametroPerRiferimento(int& a) {}
+
 //se devo passare oggetti "grossi" senza doverli ricopiare ma senza poterli modificare
 //posso passare per riferimento costante
 void parametroPerRiferimentoCostante(const int& a) {}
+
 
 //uso l'indirizzo dell'oggetto passato
 //il parametro formale è un puntatore al parametro attuale
 //molto simile al passaggio per riferimento
 void parametroPerPuntatore(int * a)
+
 //se voglio posso restituire un riferimento
 //se lo eseguo con questa riga: restituireUnRiferimetno(a=9,b=3) = 4 allora a diventerà 4.
 int& restituireUnRiferimento(int& a, int&b){
     //ritorna il maggiore
     return a > b ? a : b;
 }
+
 //i parametri opzionali sono gli ultimi e hanno valori di default
 int parametriOpzionali(int a,int b = 0,int c = 0){}

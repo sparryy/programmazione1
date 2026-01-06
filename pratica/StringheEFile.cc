@@ -8,7 +8,7 @@ int main(int argc, char * argv[]){
     char carattere;
     cin.eof(); //diverso da 0 se cin ha finito il file
     cin.fail();//diverso da 0 se cin ha errore(str into int)
-    cin.clear();//ripristina lo stato del cin dppo errore
+    cin.clear();//ripristina lo stato del cin dopo un errore
     //nel caso di uso del delimitatore, questo non verrà memorizzato
     //il delimitatore di default è \n, usato nella getline normale
     //legge una linea di input contenente anche possibili spazi
