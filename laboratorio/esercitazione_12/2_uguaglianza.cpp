@@ -2,38 +2,47 @@
 #include <cstdlib>
 using namespace std;
 
-void randomizzaArray(int array[]);
+void randomizzaArray(int (&array)[], int DIM, int val_max) {
+    for(int i = 0; i < DIM; i++) {
+        array[i] = rand() % val_max + 1;
+    }
+}
 
-void stampaArray(const int array[]);
+void stampaArray(const int array[], int DIM) {
+    cout << "[";
+    for(int i = 0; i < DIM - 1; i++) {
+        cout << array[i] << " ";
+    }
+    cout << array[DIM - 1] << "]" << endl;
+}
 
-int controlla(const int array1[], const int array2[]);
-
+int controlla(const int array1[], const int array2[], int DIM){
+    int controlla = 0;
+    for(int i = 0; i < DIM; i++) {
+        if(array1[i] == array2[i]) {
+            controlla++;
+        }
+    }
+    return controlla;
+}
 
 int main() {
     srand(time(NULL));
-    int dim;
-    cout << "Seleziona la dimensione degli array: ";
-    cin >> dim;
+    const int DIM = 10;
+    int array1[DIM];
+    int array2[DIM];
+    int val_max;
 
-    int array1[dim];
-    int array2[dim];
+    do {
+        cout << "Inserisci il valore massimo:";
+        cin >> val_max; }
 
-    randomizzaArray(array1);
-    randomizzaArray(array2);
-    stampaArray(array1);
-    stampaArray(array2);
-    cout << "Ci sono " << controlla(array1, array2) << " elementi uguali" << endl;
-    return 0;
-}
+    while(val_max > RAND_MAX || val_max < 0);
 
-void randomizzaArray(int array[], int& dim) {
-
-}
-
-void stampaArray(const int array[]) {
-
-}
-
-int controlla(const int array1[], const int array2[]){
+    randomizzaArray(array1, DIM, val_max);
+    randomizzaArray(array2, DIM, val_max);
+    stampaArray(array1, DIM);
+    stampaArray(array2, DIM);
+    cout << "Ci sono " << controlla(array1, array2, DIM) << " elementi uguali" << endl;
     return 0;
 }
