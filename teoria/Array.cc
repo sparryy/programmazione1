@@ -115,6 +115,95 @@ void quicksort_aux(int A[], int l, int r) {
         quicksort_aux(A, i+1, r);
 }
 
+int sequentialSearch(const int array[], int length, int number) {
+    int index = -1;
+    for (int i = 0; i < length && index == -1; i++) {
+        if (array[i] == number) {
+            index = i;
+        }
+    }
+    return index;
+}
+
+void selectionSort(int array[], int length) {
+    for (int i = 0; i < length - 1; i++) {
+        int indexMin = i;
+        for (int j = i + 1; j < length; j++) {
+            if (array[j] < array[indexMin]) {
+                indexMin = j;
+            }
+        }
+        int swap = array[indexMin];
+        array[indexMin] = array[i];
+        array[i] = swap;
+    }
+}
+
+void bubbleSort(int array[], int length) {
+    for (int i = 0; i < length; i++) {
+        for (int j = 0; j < length - 1 - i; j++) {
+            if (array[j] > array[j + 1]) {
+                swap(array[j],array[j + 1]);
+            }
+        }
+    }
+}
+
+int binarySearch(const int array[], int startIndex, int endIndex, int number) {
+    int index = -1, indiceMedio;
+    if (endIndex >= startIndex) {
+        indiceMedio = (endIndex + startIndex) / 2;
+        if (array[indiceMedio] == number) {
+            index = indiceMedio;
+        } else if (array[indiceMedio] > number) {
+            index = binarySearch(array, startIndex, indiceMedio - 1, number);
+        } else {
+            index = binarySearch(array, indiceMedio + 1, endIndex, number);
+        }
+    }
+    return index;
+}
+
+int binarySearchArray(const int array[], int length, int number) {
+    int index = -1, indiceMedio;
+    indiceMedio = (length) / 2;
+    int offsetIndex = 0;
+    if (array[indiceMedio] == number) {
+        index = indiceMedio;
+    } else if (array[indiceMedio] > number) {
+        index = binarySearchArray(array, length / 2, number);
+    } else {
+        int newLength = length % 2 == 0 ? length / 2 - 1 : length / 2;
+        index = binarySearchArray(&array[length / 2 + 1], newLength, number);
+        offsetIndex = length / 2 + 1;
+    }
+    return index + offsetIndex;
+}
+
+void countSort(int array[], int length) {
+    int output[length];
+    int max = array[0];
+    for (int i = 1; i < length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        }
+    }
+    int count[max + 1] = {0};
+    for (int i = 0; i < length; i++) {
+        count[array[i]]++;
+    }
+    for (int i = 1; i <= max; i++) {
+        count[i] += count[i - 1];
+    }
+    for (int i = 0; i < length; i++) {
+        output[count[array[i]] - 1] = array[i];
+        count[array[i]]--;
+    }
+    for (int i = 0; i < length; i++) {
+        array[i] = output[i];
+    }
+}
+
 
 
 */

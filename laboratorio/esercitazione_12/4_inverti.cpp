@@ -16,6 +16,14 @@ void stampaArray(const int array[], int DIM) {
     cout << array[DIM - 1] << "]" << endl;
 }
 
+void invertiArray(const int array[], int DIM) {
+    int yarra[DIM];
+    for(int i = 0; i < DIM; i++) {
+        yarra[DIM - 1 - i] = array[i];
+    }
+    stampaArray(yarra, DIM);
+}
+
 int main() {
     srand(time(NULL));
     const int DIM = 10;
@@ -23,6 +31,7 @@ int main() {
     
     popolaArray(array, DIM);
     stampaArray(array, DIM);
+    invertiArray(array, DIM);
 
     return 0;
 }
