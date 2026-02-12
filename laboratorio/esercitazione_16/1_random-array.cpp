@@ -5,6 +5,7 @@ using namespace std;
 int * generate_numbers(int length);
 
 int main(int argc, char *argv[]) {
+    srand(time(NULL));
 
     if (argc != 2) {
         cout << "Usage: random-array <length>" << endl;
