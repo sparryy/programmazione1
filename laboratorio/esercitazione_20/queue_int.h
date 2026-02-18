@@ -1,10 +1,11 @@
 #ifndef QUEUE_INT_H
 #define QUEUE_INT_H
+#include "stack_int.h"
 
-struct Node {
+/* struct Node {
     int value;
     Node *next;
-};
+}; */
 
 struct Queue {
     Node * front;
