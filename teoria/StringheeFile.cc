@@ -32,12 +32,12 @@ int main(int argc, char * argv[]) {
     fstream instream,outstream;//definizione stream
     instream.open("nomefile.txt",ios::in);//apre lo stream in lettura, con il puntatore all'inizio dello stream
     //nel caso il file non esiste viene creato per gli outstream
-    outstream.open("nomefile2.txt",ios::out)//apre lo stream in scrittura, con il puntatore all'inizio dello stream, sovrascrivendo il file
-    outstream.open("nomefile2.txt",ios::out|ios::app) //apre lo stream in scrittura e ogni scrittura avviene sempre (forzatamente) alla fine del file senza sovrascriverlo
+    outstream.open("nomefile2.txt",ios::out);//apre lo stream in scrittura, con il puntatore all'inizio dello stream, sovrascrivendo il file
+    outstream.open("nomefile2.txt",ios::out|ios::app); //apre lo stream in scrittura e ogni scrittura avviene sempre (forzatamente) alla fine del file senza sovrascriverlo
 
     instream >> stringa;
     outstream << stringa;
-    instream.getline(stringa,10)
+    instream.getline(stringa,10);
     //buona prassi chiudere gli stream quando non più necessari
     instream.close();
     outstream.close();
